@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "applications",
+  "info": {
+    "name": "applications"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Accepted",
+        "Declined"
+      ],
+      "default": "Pending",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "via": "applications",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "event": {
+      "via": "applications",
+      "model": "events"
+    }
+  }
+}

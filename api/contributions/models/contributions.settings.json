@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "contributions",
+  "info": {
+    "name": "Contributions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "event": {
+      "via": "contributions",
+      "model": "events"
+    },
+    "user": {
+      "via": "contributions",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "noTrees": {
+      "type": "integer"
+    },
+    "noBags": {
+      "type": "integer"
+    }
+  }
+}

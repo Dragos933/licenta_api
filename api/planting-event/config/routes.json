@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/planting-events",
+      "handler": "planting-event.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/planting-events/count",
+      "handler": "planting-event.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/planting-events/:id",
+      "handler": "planting-event.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/planting-events",
+      "handler": "planting-event.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/planting-events/:id",
+      "handler": "planting-event.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/planting-events/:id",
+      "handler": "planting-event.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

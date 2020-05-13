@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "events",
+  "info": {
+    "name": "Events"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Closed",
+        "InProgress",
+        "Aborted"
+      ]
+    },
+    "applications": {
+      "collection": "applications",
+      "via": "event"
+    },
+    "invitations": {
+      "collection": "invitations",
+      "via": "event"
+    },
+    "user": {
+      "via": "events",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "event_type": {
+      "type": "enumeration",
+      "enum": [
+        "Planting",
+        "Cleaning"
+      ],
+      "required": true
+    },
+    "date_open": {
+      "type": "date",
+      "required": true
+    },
+    "date_closed": {
+      "type": "date",
+      "required": false
+    },
+    "recycling_event": {
+      "model": "recycling-event",
+      "via": "event"
+    },
+    "planting_event": {
+      "via": "event",
+      "model": "planting-event"
+    },
+    "contributions": {
+      "collection": "contributions",
+      "via": "event"
+    }
+  }
+}

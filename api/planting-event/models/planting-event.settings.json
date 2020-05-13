@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "planting_events",
+  "info": {
+    "name": "Planting_event"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "event": {
+      "model": "events",
+      "via": "planting_event"
+    },
+    "location": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "noPeople": {
+      "type": "integer",
+      "required": true
+    },
+    "noTrees": {
+      "type": "integer",
+      "required": true
+    },
+    "typeTree": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 800
+    },
+    "requirements": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 800
+    }
+  }
+}

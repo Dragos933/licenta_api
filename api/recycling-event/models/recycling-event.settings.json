@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "recycling_events",
+  "info": {
+    "name": "Cleaning_event"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "event": {
+      "via": "recycling_event",
+      "model": "events"
+    },
+    "location": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "noPeople": {
+      "type": "integer",
+      "required": true
+    },
+    "noBags": {
+      "type": "integer",
+      "required": true
+    },
+    "locationDeposit": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 800
+    },
+    "requirements": {
+      "type": "richtext",
+      "maxLength": 800
+    }
+  }
+}

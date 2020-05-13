@@ -1,0 +1,6 @@
+{
+  "myCustomConfiguration": "This configuration is accessible through strapi.config.environments.development.myCustomConfiguration",
+  "TWILIO_ACCOUNT": "AC2f5cd81ae5dd7d467e2c3740c0927696",
+  "TWILIO_TOKEN": "0dc734591f6511711fff5f813353af7c",
+  "TWILIO_SMS_SERVICE": "VA821cc6d8f12407a366b7924af714df6c"
+}

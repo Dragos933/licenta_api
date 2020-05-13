@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "weather_datas",
+  "info": {
+    "name": "WeatherDatas"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "temp": {
+      "type": "float",
+      "required": true
+    },
+    "day_type": {
+      "type": "string",
+      "required": true
+    },
+    "wind_speed": {
+      "type": "float"
+    }
+  }
+}

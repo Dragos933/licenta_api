@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/recycling-events",
+      "handler": "recycling-event.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recycling-events/count",
+      "handler": "recycling-event.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recycling-events/:id",
+      "handler": "recycling-event.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/recycling-events",
+      "handler": "recycling-event.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/recycling-events/:id",
+      "handler": "recycling-event.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/recycling-events/:id",
+      "handler": "recycling-event.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/weather-datas",
+      "handler": "weather-datas.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/weather-datas/count",
+      "handler": "weather-datas.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/weather-datas/:id",
+      "handler": "weather-datas.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/weather-datas",
+      "handler": "weather-datas.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/weather-datas/:id",
+      "handler": "weather-datas.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/weather-datas/:id",
+      "handler": "weather-datas.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

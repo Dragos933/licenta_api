@@ -1,0 +1,115 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "users-permissions_user",
+  "info": {
+    "name": "user",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "model": "role",
+      "via": "users",
+      "plugin": "users-permissions",
+      "configurable": false
+    },
+    "applications": {
+      "collection": "applications",
+      "via": "user"
+    },
+    "invitations": {
+      "collection": "invitations",
+      "via": "user"
+    },
+    "tree": {
+      "model": "trees",
+      "via": "user"
+    },
+    "events": {
+      "collection": "events",
+      "via": "user"
+    },
+    "connections": {
+      "collection": "connections",
+      "via": "user"
+    },
+    "first_name": {
+      "type": "string",
+      "required": false,
+      "maxLength": 200
+    },
+    "last_name": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 15
+    },
+    "phone_verified": {
+      "type": "boolean"
+    },
+    "description": {
+      "type": "richtext",
+      "maxLength": 800
+    },
+    "address": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "contributions": {
+      "collection": "contributions",
+      "via": "user"
+    },
+    "age": {
+      "type": "integer"
+    },
+    "picture_url": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

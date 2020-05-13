@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "trees",
+  "info": {
+    "name": "Trees"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "level": {
+      "type": "integer",
+      "default": 1,
+      "required": true,
+      "min": 1
+    },
+    "description": {
+      "type": "richtext",
+      "required": true,
+      "maxLength": 800,
+      "default": "Your tree is level 1!"
+    },
+    "user": {
+      "via": "tree",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}
