@@ -37,5 +37,30 @@ module.exports = {
     }
 
     ctx.send({ status: 400, message: 'There was an error'});
+  },
+  create: async ctx => {
+    const { user } = ctx.state;
+
+    const { body: data } = ctx.request;
+
+    const { username: userUsername } = user;
+    const { username: sentUsername } = data;
+    
+    if (userUsername === sentUsername) {
+      ctx.throw(400, 'The username you provided is yours.');
+    }
+
+    try {
+      const res = await strapi.services.connections.find({ user: user.id });
+      const connections = res.filter(item => item.username === sentUsername);
+      if (connections.length === 0) {
+        const result = await strapi.services.connections.create(data);
+        ctx.send(result);
+      } else {
+        ctx.throw(400, 'You are already friend with the user.');
+      }
+    } catch (error) {
+      ctx.throw(400, error);
+    }
   }
 };
