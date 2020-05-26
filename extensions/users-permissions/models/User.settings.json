@@ -67,8 +67,8 @@
       "via": "user"
     },
     "events": {
-      "collection": "events",
-      "via": "user"
+      "via": "user",
+      "collection": "events"
     },
     "connections": {
       "collection": "connections",
@@ -110,6 +110,10 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "google": {
+      "via": "user",
+      "model": "google"
     }
   }
 }

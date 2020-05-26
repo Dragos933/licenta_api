@@ -11,8 +11,8 @@
   },
   "attributes": {
     "event": {
-      "via": "recycling_event",
-      "model": "events"
+      "model": "events",
+      "via": "recycling_event"
     },
     "location": {
       "type": "string",
@@ -40,6 +40,9 @@
     "requirements": {
       "type": "richtext",
       "maxLength": 800
+    },
+    "eventDate": {
+      "type": "date"
     }
   }
 }

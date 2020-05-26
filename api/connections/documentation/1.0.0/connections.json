@@ -756,6 +756,9 @@
               },
               "picture_url": {
                 "type": "string"
+              },
+              "google": {
+                "type": "string"
               }
             }
           },

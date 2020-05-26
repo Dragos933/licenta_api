@@ -612,6 +612,9 @@
           "requirements": {
             "type": "string",
             "maxLength": 800
+          },
+          "eventDate": {
+            "type": "string"
           }
         }
       },
@@ -648,6 +651,9 @@
           "requirements": {
             "type": "string",
             "maxLength": 800
+          },
+          "eventDate": {
+            "type": "string"
           }
         }
       }

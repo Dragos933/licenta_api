@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "googles",
+  "info": {
+    "name": "Google"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "google_token": {
+      "type": "string",
+      "required": true
+    },
+    "current_calendar": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "google"
+    },
+    "calendar_id": {
+      "type": "string"
+    }
+  }
+}

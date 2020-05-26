@@ -28,9 +28,9 @@
       "via": "event"
     },
     "user": {
-      "via": "events",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "events"
     },
     "event_type": {
       "type": "enumeration",
@@ -49,8 +49,8 @@
       "required": false
     },
     "recycling_event": {
-      "model": "recycling-event",
-      "via": "event"
+      "via": "event",
+      "model": "recycling-event"
     },
     "planting_event": {
       "via": "event",

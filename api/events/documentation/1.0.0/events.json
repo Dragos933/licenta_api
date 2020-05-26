@@ -734,6 +734,9 @@
               },
               "picture_url": {
                 "type": "string"
+              },
+              "google": {
+                "type": "string"
               }
             }
           },
@@ -783,6 +786,9 @@
               },
               "requirements": {
                 "type": "string"
+              },
+              "eventDate": {
+                "type": "string"
               }
             }
           },
@@ -819,6 +825,9 @@
                 "type": "string"
               },
               "requirements": {
+                "type": "string"
+              },
+              "eventDate": {
                 "type": "string"
               }
             }

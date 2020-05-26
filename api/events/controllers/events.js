@@ -35,6 +35,7 @@ module.exports = {
     
     for (let i = 0; i < entities.length; i++) {
       let event;
+      console.log(entities[i]);
       if (entities[i].planting_event) {
         event = await strapi.services['planting-event'].findOne({ id: entities[i].planting_event.id });
       } else {

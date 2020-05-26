@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/contributions": {
+    "/googles": {
       "get": {
         "deprecated": false,
-        "description": "Find all the contributions's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve contributions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Contributions"
+                    "$ref": "#/components/schemas/Google"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Contributions"
+          "Google"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new contributions record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve contributions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Contributions"
+                  "$ref": "#/components/schemas/Google"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Contributions"
+          "Google"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewContributions"
+                "$ref": "#/components/schemas/NewGoogle"
               }
             }
           }
         }
       }
     },
-    "/contributions/count": {
+    "/googles/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of contributions documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve contributions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Contributions"
+          "Google"
         ],
         "parameters": []
       }
     },
-    "/contributions/{id}": {
+    "/googles/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one contributions record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve contributions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Contributions"
+                  "$ref": "#/components/schemas/Google"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Contributions"
+          "Google"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single contributions record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve contributions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Contributions"
+                  "$ref": "#/components/schemas/Google"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Contributions"
+          "Google"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewContributions"
+                "$ref": "#/components/schemas/NewGoogle"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single contributions record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single contributions based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Contributions"
+          "Google"
         ],
         "parameters": [
           {
@@ -514,65 +514,20 @@
   },
   "components": {
     "schemas": {
-      "Contributions": {
+      "Google": {
         "required": [
           "id",
-          "date"
+          "google_token"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "event": {
-            "required": [
-              "id",
-              "event_type",
-              "date_open"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "status": {
-                "type": "string"
-              },
-              "applications": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "invitations": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "user": {
-                "type": "string"
-              },
-              "event_type": {
-                "type": "string"
-              },
-              "date_open": {
-                "type": "string"
-              },
-              "date_closed": {
-                "type": "string"
-              },
-              "recycling_event": {
-                "type": "string"
-              },
-              "planting_event": {
-                "type": "string"
-              },
-              "contributions": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              }
-            }
+          "google_token": {
+            "type": "string"
+          },
+          "current_calendar": {
+            "type": "string"
           },
           "user": {
             "required": [
@@ -670,36 +625,27 @@
               }
             }
           },
-          "date": {
+          "calendar_id": {
             "type": "string"
-          },
-          "noTrees": {
-            "type": "integer"
-          },
-          "noBags": {
-            "type": "integer"
           }
         }
       },
-      "NewContributions": {
+      "NewGoogle": {
         "required": [
-          "date"
+          "google_token"
         ],
         "properties": {
-          "event": {
+          "google_token": {
+            "type": "string"
+          },
+          "current_calendar": {
             "type": "string"
           },
           "user": {
             "type": "string"
           },
-          "date": {
+          "calendar_id": {
             "type": "string"
-          },
-          "noTrees": {
-            "type": "integer"
-          },
-          "noBags": {
-            "type": "integer"
           }
         }
       }
@@ -707,7 +653,7 @@
   },
   "tags": [
     {
-      "name": "Contributions"
+      "name": "Google"
     }
   ]
 }

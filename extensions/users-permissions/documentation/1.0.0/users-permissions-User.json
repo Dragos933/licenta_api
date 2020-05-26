@@ -1501,6 +1501,29 @@
                 "type": "string"
               }
             }
+          },
+          "google": {
+            "required": [
+              "id",
+              "google_token"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "google_token": {
+                "type": "string"
+              },
+              "current_calendar": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "calendar_id": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -1597,6 +1620,9 @@
           },
           "age": {
             "type": "integer"
+          },
+          "google": {
+            "type": "string"
           }
         }
       }
