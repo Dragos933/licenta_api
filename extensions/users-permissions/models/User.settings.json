@@ -55,8 +55,8 @@
       "configurable": false
     },
     "applications": {
-      "collection": "applications",
-      "via": "user"
+      "via": "user",
+      "collection": "applications"
     },
     "invitations": {
       "collection": "invitations",

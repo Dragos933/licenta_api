@@ -613,6 +613,9 @@
                 },
                 "event": {
                   "type": "string"
+                },
+                "username": {
+                  "type": "string"
                 }
               }
             }

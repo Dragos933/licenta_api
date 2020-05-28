@@ -6,17 +6,23 @@
  */
 
 const accountSid = 'AC2f5cd81ae5dd7d467e2c3740c0927696';
-const authToken = '0dc734591f6511711fff5f813353af7c';
+const authToken = '695d074d807a5aba935e262e32ab3bc4';
 const client = require('twilio')(accountSid, authToken);
 
 
 module.exports = {
   sendCode: async ctx => {
     const { phone } = ctx.request.body;
-    return client.verify.services('VA821cc6d8f12407a366b7924af714df6c')
-      .verifications
-      .create({to: phone, channel: 'sms'})
-      .then(verification => verification);
+    try {
+      const res = await client.verify.services('VA821cc6d8f12407a366b7924af714df6c')
+        .verifications
+        .create({to: phone, channel: 'sms'})
+        .then(verification => verification);
+
+      return  res;
+    } catch (error) {
+      return ctx.throw(400, 'Bad Request');
+    }
   },
   verifyCode: async ctx => {
     const { phone, code } = ctx.request.body;

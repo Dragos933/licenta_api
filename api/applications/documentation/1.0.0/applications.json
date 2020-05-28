@@ -682,6 +682,9 @@
                 }
               }
             }
+          },
+          "username": {
+            "type": "string"
           }
         }
       },
@@ -707,6 +710,9 @@
             "type": "string"
           },
           "event": {
+            "type": "string"
+          },
+          "username": {
             "type": "string"
           }
         }

@@ -25,13 +25,16 @@
       "required": true
     },
     "user": {
-      "via": "applications",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "applications"
     },
     "event": {
-      "via": "applications",
-      "model": "events"
+      "model": "events",
+      "via": "applications"
+    },
+    "username": {
+      "type": "string"
     }
   }
 }

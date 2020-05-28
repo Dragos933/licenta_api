@@ -20,8 +20,8 @@
       ]
     },
     "applications": {
-      "collection": "applications",
-      "via": "event"
+      "via": "event",
+      "collection": "applications"
     },
     "invitations": {
       "collection": "invitations",
