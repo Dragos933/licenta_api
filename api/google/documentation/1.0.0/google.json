@@ -627,6 +627,9 @@
           },
           "calendar_id": {
             "type": "string"
+          },
+          "refresh_token": {
+            "type": "string"
           }
         }
       },
@@ -645,6 +648,9 @@
             "type": "string"
           },
           "calendar_id": {
+            "type": "string"
+          },
+          "refresh_token": {
             "type": "string"
           }
         }

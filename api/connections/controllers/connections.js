@@ -11,6 +11,41 @@ const client = require('twilio')(accountSid, authToken);
 
 
 module.exports = {
+  connect: async ctx => {
+    const { body } = ctx.request;
+    const { user: userAccepting } = ctx.state;
+    const { type, userInviting, user: userInvited } = body;
+    try {
+      const user = await strapi.plugins['users-permissions'].services.user.fetch({ username: userInviting });
+      if (type === 'Accept') {
+        const res = await strapi.services.connections.update(
+            {
+              user: user.id,
+              username: userInvited,
+            },
+            {
+              status: 'Accepted',
+            }
+          );
+        await strapi.services.connections.create({
+          user: userAccepting.id,
+          username: userInviting,
+          status: 'Accepted',
+          date: new Date(),
+        });
+        return ctx.send(res);
+      } else {
+        const res = await strapi.services.connections.delete({
+          user: user.id,
+          username: userInvited,
+          status: 'Pending',
+        });
+        return ctx.send(res);
+      }
+    } catch (error) {
+      return ctx.throw(400, error);
+    }
+  },
   sendCode: async ctx => {
     const { phone } = ctx.request.body;
     try {

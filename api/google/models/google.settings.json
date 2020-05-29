@@ -24,6 +24,9 @@
     },
     "calendar_id": {
       "type": "string"
+    },
+    "refresh_token": {
+      "type": "string"
     }
   }
 }
